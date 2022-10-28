@@ -19,4 +19,5 @@ export interface Question {
     points: number;
     /** Whether or not this question is ready to display to students */
     published: boolean;
+    // index: number;
 }

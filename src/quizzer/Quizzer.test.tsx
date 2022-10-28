@@ -170,6 +170,15 @@ describe("Quizzer Tests", () => {
     });
 
     test("Users can delete an existing quiz question", () => {
+        const text = screen.getByText("Simple_Questions");
+        text.click();
+        const editButton = screen.getByText("Edit");
+        editButton.click();
+
+        const deleteButton = screen.getByText("Delete Quiz");
+        deleteButton.click();
+
+        expect(screen.queryByText("Simple_Questions")).not.toBeInTheDocument();
     });
 
     test("Users can add a new quiz question", () => {
@@ -198,8 +207,8 @@ describe("Quizzer Tests", () => {
         ).toBeInTheDocument();
     });
 
-    test("Users can edit the questions and fields of a quiz", () => {
-    });
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    test("Users can edit the questions and fields of a quiz", () => {});
 
     test("Users can reorder quiz questions", () => {
         const text = screen.getByText("Simple_Questions");
